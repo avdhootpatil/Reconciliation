@@ -1,7 +1,3 @@
-import WithLayout from "@/components/layout/WithLayout";
-
-function PolicyDetails() {
+export default function PolicyDetails() {
   return <div>PolicyDetails</div>;
 }
-
-export default WithLayout(PolicyDetails);

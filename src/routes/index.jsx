@@ -1,6 +1,6 @@
 import Login from "@/pages/Login";
 import PaymentHistory from "@/pages/PaymentHistory";
-import PolicyDetails from "@/pages/PolicyDetails";
+import PolicyList from "@/pages/PolicyList";
 import Profile from "@/pages/Profile";
 import SignUp from "@/pages/SignUp";
 
@@ -13,7 +13,7 @@ const routes = [
   {
     exact: true,
     path: "/policy",
-    component: <PolicyDetails />,
+    component: <PolicyList />,
   },
   {
     exact: true,
