@@ -16,10 +16,12 @@ import {
   DropdownMenuItem,
 } from "@/components/ui/dropdown-menu";
 import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom/dist";
+import { Link, useNavigate } from "react-router-dom/dist";
 import ChevronDownIcon from "@/assets/ChevronDownIcon";
 
 const SignUp = () => {
+  const navigate = useNavigate();
+
   return (
     <div className="flex items-center justify-center h-screen">
       <Card className="mx-auto max-w-sm">
@@ -97,7 +99,13 @@ const SignUp = () => {
                 </DropdownMenuContent>
               </DropdownMenu>
             </div>
-            <Button type="submit" className="w-full">
+            <Button
+              type="submit"
+              className="w-full"
+              onClick={() => {
+                navigate("/login");
+              }}
+            >
               Sign Up
             </Button>
           </div>

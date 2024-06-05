@@ -13,9 +13,10 @@ import {
   InputOTPSlot,
 } from "@/components/ui/input-otp";
 import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom/dist";
+import { Link, useNavigate } from "react-router-dom/dist";
 
 const Login = () => {
+  const navigate = useNavigate();
   return (
     <div className="flex items-center justify-center h-screen">
       <Card className="mx-auto max-w-sm">
@@ -54,7 +55,13 @@ const Login = () => {
                 </Button>
               </div>
             </div>
-            <Button type="submit" className="w-full">
+            <Button
+              type="submit"
+              className="w-full"
+              onClick={() => {
+                navigate("/");
+              }}
+            >
               Sign In
             </Button>
           </div>
