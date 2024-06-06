@@ -23,7 +23,7 @@ import WithLayout from "@/components/layout/WithLayout";
 import { DatePicker } from "@/components/ui/datePicker";
 
 function Profile() {
-  const [activeTab, setActiveTab] = useState("basic-details");
+  const [activeTab, setActiveTab] = useState("my-policies");
   const [nominees, setNominees] = useState([
     { name: "", dob: "", relation: "" },
   ]);
@@ -75,12 +75,12 @@ function Profile() {
           onValueChange={setActiveTab}
         >
           <TabsList className="mb-10">
+            <TabsTrigger value="my-policies">My Policies</TabsTrigger>
             <TabsTrigger value="basic-details">Basic Details</TabsTrigger>
             <TabsTrigger value="bank-association">
               Bank & Association
             </TabsTrigger>
             <TabsTrigger value="nominee">Nominee</TabsTrigger>
-            <TabsTrigger value="my-policies">My Policies</TabsTrigger>
           </TabsList>
           <TabsContent value="basic-details">
             <div className="space-y-4">
