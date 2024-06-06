@@ -12,8 +12,10 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import WithLayout from "@/components/layout/WithLayout";
+import { useNavigate } from "react-router-dom";
 
 function PolicyList() {
+  const navigate = useNavigate();
   const policyDetails = [
     {
       name: "Life Insurance",
@@ -316,7 +318,14 @@ function PolicyList() {
             </Card>
 
             <div className="flex justify-end	">
-              <Button className="mt-5">Go to payments</Button>
+              <Button
+                onClick={() => {
+                  navigate("/payment");
+                }}
+                className="mt-5"
+              >
+                Go to payments
+              </Button>
             </div>
           </div>
         </div>

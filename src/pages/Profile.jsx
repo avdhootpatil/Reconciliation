@@ -20,6 +20,7 @@ import {
   TableCell,
 } from "@/components/ui/table";
 import WithLayout from "@/components/layout/WithLayout";
+import { DatePicker } from "@/components/ui/datePicker";
 
 function Profile() {
   const [activeTab, setActiveTab] = useState("basic-details");
@@ -105,7 +106,12 @@ function Profile() {
               <div className="grid grid-cols-2 gap-4">
                 <div className="space-y-2">
                   <Label htmlFor="dob">Date of Birth</Label>
-                  <Input id="dob" type="date" placeholder="dd-mm-yyyy" />
+                  <DatePicker
+                    Label="Date of birth"
+                    id="dob"
+                    type="date"
+                    placeholder="dd-mm-yyyy"
+                  />
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="address">Address</Label>
@@ -199,7 +205,7 @@ function Profile() {
                     <Label htmlFor={`nominee-dob-${index}`}>
                       Date of Birth
                     </Label>
-                    <Input
+                    <DatePicker
                       id={`nominee-dob-${index}`}
                       type="date"
                       placeholder="dd-mm-yyyy"
