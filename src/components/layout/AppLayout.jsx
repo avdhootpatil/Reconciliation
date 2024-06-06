@@ -1,12 +1,4 @@
-import {
-  CircleUser,
-  Home,
-  Menu,
-  Package,
-  Package2,
-  Search,
-  ShoppingCart,
-} from "lucide-react";
+import { CircleUser, Menu, Package, Package2, Search } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -43,7 +35,7 @@ export default function AppLayout({ children }) {
                   navigate("/");
                 }}
               >
-                <Home className="h-4 w-4" />
+                <Package className="h-4 w-4" />
                 Profile
               </div>
               <div
@@ -52,8 +44,26 @@ export default function AppLayout({ children }) {
                   navigate("/policy");
                 }}
               >
-                <ShoppingCart className="h-4 w-4" />
+                <Package className="h-4 w-4" />
                 Policy
+              </div>
+              <div
+                className="flex items-center gap-3 rounded-lg  px-3 py-2 text-primary transition-all hover:text-primary cursor-pointer"
+                onClick={() => {
+                  navigate("/bankassociation");
+                }}
+              >
+                <Package className="h-4 w-4" />
+                Bank Association
+              </div>
+              <div
+                className="flex items-center gap-3 rounded-lg  px-3 py-2 text-primary transition-all hover:text-primary cursor-pointer"
+                onClick={() => {
+                  navigate("/retirees");
+                }}
+              >
+                <Package className="h-4 w-4" />
+                Retirees
               </div>
               <div
                 className="flex items-center gap-3 rounded-lg  px-3 py-2 text-primary transition-all hover:text-primary cursor-pointer"
@@ -63,6 +73,43 @@ export default function AppLayout({ children }) {
               >
                 <Package className="h-4 w-4" />
                 Payments
+              </div>
+
+              <div
+                className="flex items-center gap-3 rounded-lg  px-3 py-2 text-primary transition-all hover:text-primary cursor-pointer"
+                onClick={() => {
+                  navigate("/reports");
+                }}
+              >
+                <Package className="h-4 w-4" />
+                Reports
+              </div>
+              <div
+                className="flex items-center gap-3 rounded-lg  px-3 py-2 text-primary transition-all hover:text-primary cursor-pointer"
+                onClick={() => {
+                  navigate("/importdata");
+                }}
+              >
+                <Package className="h-4 w-4" />
+                Import Data
+              </div>
+              <div
+                className="flex items-center gap-3 rounded-lg  px-3 py-2 text-primary transition-all hover:text-primary cursor-pointer"
+                onClick={() => {
+                  navigate("/messages");
+                }}
+              >
+                <Package className="h-4 w-4" />
+                Messages
+              </div>
+              <div
+                className="flex items-center gap-3 rounded-lg  px-3 py-2 text-primary transition-all hover:text-primary cursor-pointer"
+                onClick={() => {
+                  navigate("/offlinePayments");
+                }}
+              >
+                <Package className="h-4 w-4" />
+                Offline Payments
               </div>
             </nav>
           </div>
@@ -93,7 +140,7 @@ export default function AppLayout({ children }) {
                     navigate("/");
                   }}
                 >
-                  <Home className="h-5 w-5" />
+                  <Package className="h-4 w-4" />
                   Profile
                 </div>
                 <div
@@ -102,8 +149,26 @@ export default function AppLayout({ children }) {
                     navigate("/policy");
                   }}
                 >
-                  <ShoppingCart className="h-5 w-5" />
+                  <Package className="h-4 w-4" />
                   Policy
+                </div>
+                <div
+                  className="flex items-center gap-3 rounded-lg  px-3 py-2 text-primary transition-all hover:text-primary cursor-pointer"
+                  onClick={() => {
+                    navigate("/bankassociation");
+                  }}
+                >
+                  <Package className="h-4 w-4" />
+                  Bank Association
+                </div>
+                <div
+                  className="flex items-center gap-3 rounded-lg  px-3 py-2 text-primary transition-all hover:text-primary cursor-pointer"
+                  onClick={() => {
+                    navigate("/retirees");
+                  }}
+                >
+                  <Package className="h-4 w-4" />
+                  Retirees
                 </div>
                 <div
                   className="mx-[-0.65rem] flex items-center gap-4 rounded-xl px-3 py-2 text-muted-foreground hover:text-foreground"
@@ -113,6 +178,42 @@ export default function AppLayout({ children }) {
                 >
                   <Package className="h-5 w-5" />
                   Payments
+                </div>
+                <div
+                  className="flex items-center gap-3 rounded-lg  px-3 py-2 text-primary transition-all hover:text-primary cursor-pointer"
+                  onClick={() => {
+                    navigate("/reports");
+                  }}
+                >
+                  <Package className="h-4 w-4" />
+                  Reports
+                </div>
+                <div
+                  className="flex items-center gap-3 rounded-lg  px-3 py-2 text-primary transition-all hover:text-primary cursor-pointer"
+                  onClick={() => {
+                    navigate("/importdata");
+                  }}
+                >
+                  <Package className="h-4 w-4" />
+                  Import Data
+                </div>
+                <div
+                  className="flex items-center gap-3 rounded-lg  px-3 py-2 text-primary transition-all hover:text-primary cursor-pointer"
+                  onClick={() => {
+                    navigate("/messages");
+                  }}
+                >
+                  <Package className="h-4 w-4" />
+                  Messages
+                </div>
+                <div
+                  className="flex items-center gap-3 rounded-lg  px-3 py-2 text-primary transition-all hover:text-primary cursor-pointer"
+                  onClick={() => {
+                    navigate("/offlinePayments");
+                  }}
+                >
+                  <Package className="h-4 w-4" />
+                  Offline Payments
                 </div>
               </nav>
             </SheetContent>

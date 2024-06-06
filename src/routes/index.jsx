@@ -1,9 +1,15 @@
+import BankAssociation from "@/pages/BankAssociation";
+import ImportData from "@/pages/ImportData";
 import Login from "@/pages/Login";
+import Messages from "@/pages/Messages";
+import OfflinePayments from "@/pages/OfflinePayments";
 import PaymentHistory from "@/pages/PaymentHistory";
 import PaymentSuccess from "@/pages/PaymentSuccess";
 import Payments from "@/pages/Payments";
 import PolicyList from "@/pages/PolicyList";
 import Profile from "@/pages/Profile";
+import Reports from "@/pages/Reports";
+import Retirees from "@/pages/Retirees";
 import SignUp from "@/pages/SignUp";
 
 const routes = [
@@ -41,6 +47,38 @@ const routes = [
     exact: true,
     path: "/paymentsuccess",
     component: <PaymentSuccess />,
+  },
+  {
+    exact: true,
+    path: "/bankassociation",
+    component: <BankAssociation />,
+  },
+  {
+    exact: true,
+    path: "/retirees",
+    component: <Retirees />,
+  },
+
+  {
+    exact: true,
+    path: "/reports",
+    component: <Reports />,
+  },
+
+  {
+    exact: true,
+    path: "/messages",
+    component: <Messages />,
+  },
+  {
+    exact: true,
+    path: "/importdata",
+    component: <ImportData />,
+  },
+  {
+    exact: true,
+    path: "/offlinepayments",
+    component: <OfflinePayments />,
   },
 ];
 
