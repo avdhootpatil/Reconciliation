@@ -1,5 +1,6 @@
 import Login from "@/pages/Login";
 import PaymentHistory from "@/pages/PaymentHistory";
+import PaymentSuccess from "@/pages/PaymentSuccess";
 import Payments from "@/pages/Payments";
 import PolicyList from "@/pages/PolicyList";
 import Profile from "@/pages/Profile";
@@ -35,6 +36,11 @@ const routes = [
     exact: true,
     path: "/payment",
     component: <Payments />,
+  },
+  {
+    exact: true,
+    path: "/paymentsuccess",
+    component: <PaymentSuccess />,
   },
 ];
 

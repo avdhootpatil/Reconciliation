@@ -8,13 +8,16 @@ import {
   SelectContent,
   SelectItem,
 } from "@/components/ui/select";
+import { useNavigate } from "react-router-dom/dist";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import { Input } from "@/components/ui/input";
 import WithLayout from "@/components/layout/WithLayout";
 import FileUpload from "@/components/ui/fileUpload";
+import { Badge } from "@/components/ui/badge";
 
 function Payments() {
+  const navigate = useNavigate();
   const [paymentMode, setPaymentMode] = useState("online");
   const [activeTab, setActiveTab] = useState("cheque");
   const [chequeNumber, setChequeNumber] = useState("");
@@ -44,8 +47,12 @@ function Payments() {
   const handleDDFileChange = (event) => {
     setDDFile(event.target.files[0]);
   };
-  const handleSubmitCheque = () => {};
-  const handleSubmitDD = () => {};
+  const handleSubmitCheque = () => {
+    navigate("/paymentsuccess");
+  };
+  const handleSubmitDD = () => {
+    navigate("/paymentsuccess");
+  };
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
       <Card>
@@ -76,8 +83,12 @@ function Payments() {
         </CardContent>
       </Card>
       <Card>
-        <CardHeader>
+        <CardHeader className="flex flex-row justify-between items-center">
           <CardTitle>Payment Mode</CardTitle>
+          <Badge className="font-medium w-60 h-11 flex justify-between px-5">
+            <Label htmlFor="premium">Amout Payable</Label>
+            <div className="text-lg">₹10000</div>
+          </Badge>
         </CardHeader>
         <CardContent className="flex flex-col">
           <div className="grid gap-2">
@@ -100,7 +111,7 @@ function Payments() {
           </div>
           {paymentMode === "online" && (
             <div className="flex justify-end mt-2">
-              <Button>Pay</Button>
+              <Button onClick={() => navigate("/paymentsuccess")}>Pay</Button>
             </div>
           )}
           {paymentMode === "offline" && (
