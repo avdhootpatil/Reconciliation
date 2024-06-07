@@ -32,7 +32,7 @@ function BankAssociation() {
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         <Card className="cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
-          <CardContent>
+          <CardContent className="py-3">
             <div className="flex items-center justify-between">
               <div>
                 <h3 className="text-lg font-semibold">Acme Bank</h3>
@@ -45,7 +45,7 @@ function BankAssociation() {
           </CardContent>
         </Card>
         <Card className="cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
-          <CardContent>
+          <CardContent className="py-3">
             <div className="flex items-center justify-between">
               <div>
                 <h3 className="text-lg font-semibold">Acme Bank - West</h3>
@@ -58,7 +58,7 @@ function BankAssociation() {
           </CardContent>
         </Card>
         <Card className="cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
-          <CardContent>
+          <CardContent className="py-3">
             <div className="flex items-center justify-between">
               <div>
                 <h3 className="text-lg font-semibold">Acme Bank - East</h3>
@@ -71,7 +71,7 @@ function BankAssociation() {
           </CardContent>
         </Card>
         <Card className="cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
-          <CardContent>
+          <CardContent className="py-3">
             <div className="flex items-center justify-between">
               <div>
                 <h3 className="text-lg font-semibold">Zeta Bank</h3>
@@ -84,7 +84,7 @@ function BankAssociation() {
           </CardContent>
         </Card>
         <Card className="cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
-          <CardContent>
+          <CardContent className="py-3">
             <div className="flex items-center justify-between">
               <div>
                 <h3 className="text-lg font-semibold">Zeta Bank - North</h3>
@@ -97,7 +97,7 @@ function BankAssociation() {
           </CardContent>
         </Card>
         <Card className="cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
-          <CardContent>
+          <CardContent className="py-3">
             <div className="flex items-center justify-between">
               <div>
                 <h3 className="text-lg font-semibold">Zeta Bank - South</h3>

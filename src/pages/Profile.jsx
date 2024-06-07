@@ -21,8 +21,11 @@ import {
 } from "@/components/ui/table";
 import WithLayout from "@/components/layout/WithLayout";
 import { DatePicker } from "@/components/ui/datePicker";
+import { useNavigate } from "react-router-dom";
 
 function Profile() {
+  const navigate = useNavigate();
+
   const [activeTab, setActiveTab] = useState("my-policies");
   const [nominees, setNominees] = useState([
     { name: "", dob: "", relation: "" },
@@ -235,6 +238,23 @@ function Profile() {
           </TabsContent>
           <TabsContent value="my-policies">
             <div className="space-y-4">
+              <div className="flex items-center justify-between mb-10">
+                <Input
+                  type="search"
+                  placeholder="Search Policies..."
+                  // value={searchTerm}
+                  // onChange={(e) => setSearchTerm(e.target.value)}
+                  className="w-full max-w-md"
+                />
+
+                <Button
+                  onClick={() => {
+                    navigate("/policy");
+                  }}
+                >
+                  Add Policy
+                </Button>
+              </div>
               <Table>
                 <TableHeader>
                   <TableRow>
