@@ -35,7 +35,7 @@ function BankAssociation() {
           <CardContent className="py-3">
             <div className="flex items-center justify-between">
               <div>
-                <h3 className="text-lg font-semibold">Acme Bank</h3>
+                <h3 className="text-lg font-semibold pt-4">Acme Bank</h3>
                 <p className="text-gray-500 dark:text-gray-400">
                   Parent Association
                 </p>
@@ -48,7 +48,7 @@ function BankAssociation() {
           <CardContent className="py-3">
             <div className="flex items-center justify-between">
               <div>
-                <h3 className="text-lg font-semibold">Acme Bank - West</h3>
+                <h3 className="text-lg font-semibold pt-4">Acme Bank - West</h3>
                 <p className="text-gray-500 dark:text-gray-400">
                   Child of Acme Bank
                 </p>
@@ -61,7 +61,7 @@ function BankAssociation() {
           <CardContent className="py-3">
             <div className="flex items-center justify-between">
               <div>
-                <h3 className="text-lg font-semibold">Acme Bank - East</h3>
+                <h3 className="text-lg font-semibold pt-4">Acme Bank - East</h3>
                 <p className="text-gray-500 dark:text-gray-400">
                   Child of Acme Bank
                 </p>
@@ -74,7 +74,7 @@ function BankAssociation() {
           <CardContent className="py-3">
             <div className="flex items-center justify-between">
               <div>
-                <h3 className="text-lg font-semibold">Zeta Bank</h3>
+                <h3 className="text-lg font-semibold pt-4">Zeta Bank</h3>
                 <p className="text-gray-500 dark:text-gray-400">
                   Parent Association
                 </p>
@@ -87,7 +87,9 @@ function BankAssociation() {
           <CardContent className="py-3">
             <div className="flex items-center justify-between">
               <div>
-                <h3 className="text-lg font-semibold">Zeta Bank - North</h3>
+                <h3 className="text-lg font-semibold pt-4">
+                  Zeta Bank - North
+                </h3>
                 <p className="text-gray-500 dark:text-gray-400">
                   Child of Zeta Bank
                 </p>
@@ -100,7 +102,9 @@ function BankAssociation() {
           <CardContent className="py-3">
             <div className="flex items-center justify-between">
               <div>
-                <h3 className="text-lg font-semibold">Zeta Bank - South</h3>
+                <h3 className="text-lg font-semibold pt-4">
+                  Zeta Bank - South
+                </h3>
                 <p className="text-gray-500 dark:text-gray-400">
                   Child of Zeta Bank
                 </p>
