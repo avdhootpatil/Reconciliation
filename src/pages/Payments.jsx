@@ -1,20 +1,20 @@
-import { useState } from "react";
-import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
+import WithLayout from "@/components/layout/WithLayout";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { DatePicker } from "@/components/ui/datePicker";
+import FileUpload from "@/components/ui/fileUpload";
+import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import {
   Select,
-  SelectTrigger,
-  SelectValue,
   SelectContent,
   SelectItem,
+  SelectTrigger,
+  SelectValue,
 } from "@/components/ui/select";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom/dist";
-import { Button } from "@/components/ui/button";
-import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
-import { Input } from "@/components/ui/input";
-import WithLayout from "@/components/layout/WithLayout";
-import FileUpload from "@/components/ui/fileUpload";
-import { Badge } from "@/components/ui/badge";
 
 function Payments() {
   const navigate = useNavigate();
@@ -116,7 +116,7 @@ function Payments() {
           )}
           {paymentMode === "offline" && (
             <div className="grid gap-4 mt-3 mb-3">
-              <Tabs
+              {/* <Tabs
                 defaultValue="cheque"
                 className="w-full"
                 value={activeTab}
@@ -124,135 +124,85 @@ function Payments() {
               >
                 <TabsList className="grid w-full grid-cols-2">
                   <TabsTrigger value="cheque">Cheque</TabsTrigger>
-                  <TabsTrigger value="dd">Demand Draft</TabsTrigger>
-                </TabsList>
-                <TabsContent value="cheque">
-                  <div className=" flex flex-col">
-                    <div className="grid gap-2">
-                      <Label htmlFor="chequeNumber">Cheque Number</Label>
-                      <Input
-                        id="chequeNumber"
-                        value={chequeNumber}
-                        onChange={(e) => setChequeNumber(e.target.value)}
-                        placeholder="Cheque Number"
-                      />
-                    </div>
-                    <div className="grid gap-2">
-                      <Label className="mt-3" htmlFor="chequeAmount">
-                        Amount
-                      </Label>
-                      <Input
-                        id="chequeAmount"
-                        value={chequeAmount}
-                        onChange={(e) => setChequeAmount(e.target.value)}
-                        placeholder="Amount"
-                      />
-                    </div>
-                    <div className="grid gap-2">
-                      <Label className="mt-3" htmlFor="bankName">
-                        Bank Name
-                      </Label>
-                      <Input
-                        id="bankName"
-                        value={bankName}
-                        onChange={(e) => setBankName(e.target.value)}
-                        placeholder="Bank Name"
-                      />
-                    </div>
-                    <div className="grid gap-2">
-                      <Label className="mt-3" htmlFor="associationName">
-                        Association Name
-                      </Label>
-                      <Input
-                        id="associationName"
-                        value={associationName}
-                        onChange={(e) => setAssociationName(e.target.value)}
-                        placeholder="Association Name"
-                      />
-                    </div>
-                    <div className="grid gap-2">
-                      <Label className="mt-3" htmlFor="favouredName">
-                        In Favour Of
-                      </Label>
-                      <Input
-                        id="favouredName"
-                        value={favouredName}
-                        onChange={(e) => setFavouredName(e.target.value)}
-                        placeholder="In Favour Of"
-                      />
-                    </div>
-                    <div className="grid gap-2">
-                      <Label className="mt-3" htmlFor="chequeFile">
-                        Cheque File
-                      </Label>
-                      <FileUpload
-                        id="chequeFile"
-                        onChange={handleChequeFileChange}
-                      />
-                    </div>
-                    <div className="flex justify-end mt-2">
-                      <Button onClick={handleSubmitCheque}>Pay</Button>
-                    </div>
-                  </div>
-                </TabsContent>
-                <TabsContent value="dd">
-                  <div className="flex flex-col">
-                    <div className="grid gap-2">
-                      <Label className="mt-3" htmlFor="ddNumber">
-                        Demand Draft Number
-                      </Label>
-                      <Input
-                        id="ddNumber"
-                        value={ddNumber}
-                        onChange={(e) => setDDNumber(e.target.value)}
-                        placeholder="Demand Draft Number"
-                      />
-                    </div>
-                    <div className="grid gap-2">
-                      <Label className="mt-3" htmlFor="ddPayableAt">
-                        Payable At
-                      </Label>
-                      <Input
-                        id="ddPayableAt"
-                        value={ddPayableAt}
-                        onChange={(e) => setDDPayableAt(e.target.value)}
-                        placeholder="Payable At"
-                      />
-                    </div>
-                    <div className="grid gap-2">
-                      <Label className="mt-3" htmlFor="ddAmount">
-                        Amount
-                      </Label>
-                      <Input
-                        id="ddAmount"
-                        value={ddAmount}
-                        onChange={(e) => setDDAmount(e.target.value)}
-                        placeholder="Amount"
-                      />
-                    </div>
-                    <div className="grid gap-2">
-                      <Label className="mt-3" htmlFor="ddFavouredName">
-                        In Favour Of
-                      </Label>
-                      <Input
-                        id="ddFavouredName"
-                        value={ddFavouredName}
-                        onChange={(e) => setDDFavouredName(e.target.value)}
-                        placeholder="In Favour Of"
-                      />
-                    </div>
-                    <div className="grid gap-2">
-                      <Label className="mt-3" htmlFor="ddFile">
-                        Demand Draft File
-                      </Label>
-                      <FileUpload id="ddFile" onChange={handleDDFileChange} />
-                    </div>
-                    <div className="flex justify-end mt-2">
-                      <Button onClick={handleSubmitDD}>Pay</Button>
-                    </div>
-                  </div>
-                </TabsContent>
-              </Tabs>
+                </TabsList> */}
+              {/* <TabsContent value="cheque"> */}
+              <div className=" flex flex-col mt-5">
+                <div className="grid gap-2">
+                  <Label htmlFor="chequeNumber">Cheque Number</Label>
+                  <Input
+                    id="chequeNumber"
+                    value={chequeNumber}
+                    onChange={(e) => setChequeNumber(e.target.value)}
+                    placeholder="Cheque Number"
+                  />
+                </div>
+                <div className="grid gap-2">
+                  <Label className="mt-3" htmlFor="chequeAmount">
+                    Amount
+                  </Label>
+                  <Input
+                    id="chequeAmount"
+                    value={chequeAmount}
+                    onChange={(e) => setChequeAmount(e.target.value)}
+                    placeholder="Amount"
+                  />
+                </div>
+                <div className="grid gap-2">
+                  <Label className="mt-3" htmlFor="bankName">
+                    Bank Name{" "}
+                    <span className="text-sm text-gray-500 dark:text-gray-400 ml-2">
+                      (The bank name on the cheque)
+                    </span>
+                  </Label>
+                  <Input
+                    id="bankName"
+                    value={bankName}
+                    onChange={(e) => setBankName(e.target.value)}
+                    placeholder="Bank Name"
+                  />
+                </div>
+                <div className="grid gap-2">
+                  <Label htmlFor="dob" className="mt-3">
+                    Date{" "}
+                  </Label>
+                  <DatePicker
+                    Label="Date of birth"
+                    id="dob"
+                    type="date"
+                    placeholder="dd-mm-yyyy"
+                  />
+                </div>
+
+                <div className="grid gap-2">
+                  <Label className="mt-3" htmlFor="favouredName">
+                    In Favour Of
+                  </Label>
+                  <Select id="favouredName">
+                    <SelectTrigger>
+                      <SelectValue placeholder="Select Association" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="bank1">Association 1</SelectItem>
+                      <SelectItem value="bank2">Association 2</SelectItem>
+                      <SelectItem value="bank3">Association 3</SelectItem>
+                    </SelectContent>
+                  </Select>
+                </div>
+                <div className="grid gap-2">
+                  <Label className="mt-3" htmlFor="chequeFile">
+                    Cheque Photo
+                  </Label>
+                  <FileUpload
+                    id="chequeFile"
+                    onChange={handleChequeFileChange}
+                  />
+                </div>
+                <div className="flex justify-end mt-2">
+                  <Button onClick={handleSubmitCheque}>Pay</Button>
+                </div>
+              </div>
+              {/* </TabsContent> */}
+              {/* </Tabs> */}
             </div>
           )}
         </CardContent>

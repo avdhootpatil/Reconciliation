@@ -30,6 +30,7 @@ function Profile() {
   const [nominees, setNominees] = useState([
     { name: "", dob: "", relation: "" },
   ]);
+
   const addNominee = () => {
     setNominees([...nominees, { name: "", dob: "", relation: "" }]);
   };
@@ -45,6 +46,8 @@ function Profile() {
       sumInsured: 500000,
       topUp: true,
       isActive: true,
+      paymentStatus: "Paid",
+      premium: 50.99,
     },
     {
       id: 2,
@@ -52,6 +55,8 @@ function Profile() {
       sumInsured: 200000,
       topUp: false,
       isActive: true,
+      paymentStatus: "Pending",
+      premium: 30.99,
     },
     {
       id: 3,
@@ -59,6 +64,8 @@ function Profile() {
       sumInsured: 100000,
       topUp: true,
       isActive: false,
+      paymentStatus: "Paid",
+      premium: 20.99,
     },
     {
       id: 4,
@@ -66,6 +73,8 @@ function Profile() {
       sumInsured: 50000,
       topUp: false,
       isActive: true,
+      paymentStatus: "Paid",
+      premium: 15.99,
     },
   ];
   return (
@@ -80,10 +89,7 @@ function Profile() {
           <TabsList className="mb-10">
             <TabsTrigger value="my-policies">My Policies</TabsTrigger>
             <TabsTrigger value="basic-details">Basic Details</TabsTrigger>
-            <TabsTrigger value="bank-association">
-              Bank & Association
-            </TabsTrigger>
-            <TabsTrigger value="nominee">Nominee</TabsTrigger>
+            {/* <TabsTrigger value="nominee">Nominee</TabsTrigger> */}
           </TabsList>
           <TabsContent value="basic-details">
             <div className="space-y-4">
@@ -92,56 +98,20 @@ function Profile() {
                   <Label htmlFor="name">Name of the Applicant</Label>
                   <Input id="name" placeholder="Enter your name" />
                 </div>
+
                 <div className="space-y-2">
-                  <Label htmlFor="gender">Gender</Label>
-                  <Select id="gender">
-                    <SelectTrigger>
-                      <SelectValue placeholder="Select gender" />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="male">Male</SelectItem>
-                      <SelectItem value="female">Female</SelectItem>
-                      <SelectItem value="other">Other</SelectItem>
-                    </SelectContent>
-                  </Select>
+                  <Label htmlFor="pf-no">Pension Fund No. </Label>
+                  <Input id="pf-no" placeholder="Enter PF number" />
                 </div>
               </div>
               <div className="grid grid-cols-2 gap-4">
                 <div className="space-y-2">
-                  <Label htmlFor="dob">Date of Birth</Label>
-                  <DatePicker
-                    Label="Date of birth"
-                    id="dob"
-                    type="date"
-                    placeholder="dd-mm-yyyy"
-                  />
-                </div>
-                <div className="space-y-2">
-                  <Label htmlFor="address">Address</Label>
-                  <Textarea id="address" placeholder="Enter your address" />
-                </div>
-              </div>
-              <div className="grid grid-cols-2 gap-4">
-                <div className="space-y-2">
-                  <Label htmlFor="email">Email</Label>
-                  <Input
-                    id="email"
-                    type="email"
-                    placeholder="example@email.com"
-                  />
-                </div>
-                <div className="space-y-2">
-                  <Label htmlFor="mobile">Mobile Number</Label>
-                  <Input id="mobile" type="tel" placeholder="123-456-7890" />
-                </div>
-              </div>
-            </div>
-          </TabsContent>
-          <TabsContent value="bank-association">
-            <div className="space-y-4">
-              <div className="grid grid-cols-2 gap-4">
-                <div className="space-y-2">
-                  <Label htmlFor="bank-name">Bank Name</Label>
+                  <Label htmlFor="bank-name">
+                    Bank Name{" "}
+                    <span className="text-sm text-gray-500 dark:text-gray-400 ml-2">
+                      (The bank name you were working in past)
+                    </span>
+                  </Label>
                   <Select id="bank-name">
                     <SelectTrigger>
                       <SelectValue placeholder="Select bank" />
@@ -173,18 +143,59 @@ function Profile() {
                   </Select>
                 </div>
               </div>
+
               <div className="grid grid-cols-2 gap-4">
                 <div className="space-y-2">
-                  <Label htmlFor="pf-no">PF No/Emp ID (Optional)</Label>
-                  <Input
-                    id="pf-no"
-                    placeholder="Enter PF number or employee ID"
+                  <Label htmlFor="dob">Date of Birth</Label>
+                  <DatePicker
+                    Label="Date of birth"
+                    id="dob"
+                    type="date"
+                    placeholder="dd-mm-yyyy"
                   />
                 </div>
+                <div className="space-y-2">
+                  <Label htmlFor="gender">Gender</Label>
+                  <Select id="gender">
+                    <SelectTrigger>
+                      <SelectValue placeholder="Select gender" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="male">Male</SelectItem>
+                      <SelectItem value="female">Female</SelectItem>
+                      <SelectItem value="other">Other</SelectItem>
+                    </SelectContent>
+                  </Select>
+                </div>
+              </div>
+              <div className="grid grid-cols-2 gap-4">
+                <div className="space-y-2">
+                  <Label htmlFor="email">Email</Label>
+                  <Input
+                    id="email"
+                    type="email"
+                    placeholder="example@email.com"
+                  />
+                </div>
+                <div className="space-y-2">
+                  <Label htmlFor="mobile">Mobile Number</Label>
+                  <Input id="mobile" type="tel" placeholder="123-456-7890" />
+                </div>
+
+                <div className="space-y-2">
+                  <div className="space-y-2">
+                    <Label htmlFor="address">Address</Label>
+                    <Textarea id="address" placeholder="Enter your address" />
+                  </div>
+                </div>
+              </div>
+              <div className="flex justify-end">
+                <Button>Save</Button>
               </div>
             </div>
           </TabsContent>
-          <TabsContent value="nominee">
+
+          {/* <TabsContent value="nominee">
             <div className="space-y-4">
               {nominees.map((nominee, index) => (
                 <div
@@ -235,7 +246,7 @@ function Profile() {
               ))}
               <Button onClick={addNominee}>Add Nominee</Button>
             </div>
-          </TabsContent>
+          </TabsContent> */}
           <TabsContent value="my-policies">
             <div className="space-y-4">
               <div className="flex items-center justify-between mb-10">
@@ -263,6 +274,9 @@ function Profile() {
                     <TableHead>Sum Insured</TableHead>
                     <TableHead>Top Up</TableHead>
                     <TableHead>Is Active</TableHead>
+                    <TableHead>Payment Status</TableHead>
+                    <TableHead>Premium</TableHead>
+                    <TableHead>Action</TableHead>
                   </TableRow>
                 </TableHeader>
                 <TableBody>
@@ -275,6 +289,13 @@ function Profile() {
                       </TableCell>
                       <TableCell>{policy.topUp ? "Yes" : "No"}</TableCell>
                       <TableCell>{policy.isActive ? "Yes" : "No"}</TableCell>
+                      <TableCell>{policy.paymentStatus}</TableCell>
+                      <TableCell>${policy.premium.toFixed(2)}</TableCell>
+                      <TableCell>
+                        <Button variant="outline" size="sm">
+                          Renew
+                        </Button>
+                      </TableCell>
                     </TableRow>
                   ))}
                 </TableBody>

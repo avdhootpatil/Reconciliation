@@ -26,8 +26,11 @@ import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import WithLayout from "@/components/layout/WithLayout";
+import { useNavigate } from "react-router-dom";
 
 function Retirees() {
+  const navigate = useNavigate();
+
   return (
     <div>
       <Card>
@@ -51,7 +54,11 @@ function Retirees() {
                 </TableRow>
               </TableHeader>
               <TableBody>
-                <TableRow>
+                <TableRow
+                  onClick={() => {
+                    navigate("/");
+                  }}
+                >
                   <TableCell>John Doe</TableCell>
                   <TableCell>Retirement Plan A</TableCell>
                   <TableCell>$500,000</TableCell>

@@ -21,9 +21,15 @@ import {
 
 function OfflinePayments() {
   return (
-    <div className="container mx-auto py-8 px-4 sm:px-6 lg:px-8">
+    <div className="container mx-auto  px-2 sm:px-6 lg:px-8">
       <div className="flex items-center justify-between mb-6">
         <h1 className="text-2xl font-bold">Offline Payments</h1>
+        <div className="flex items-center gap-4">
+          <Button>
+            <UploadIcon className="w-4 h-4 mr-2" />
+            Bulk Upload
+          </Button>
+        </div>
       </div>
       <div className="overflow-x-auto">
         <Table>
@@ -102,8 +108,8 @@ function OfflinePayments() {
                         <img
                           src="/placeholder.svg"
                           alt="Payment Screenshot"
-                          width={600}
-                          height={400}
+                          width={200}
+                          height={200}
                           className="rounded-md"
                         />
                       </div>
@@ -300,6 +306,27 @@ function EyeIcon(props) {
     >
       <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z" />
       <circle cx="12" cy="12" r="3" />
+    </svg>
+  );
+}
+
+function UploadIcon(props) {
+  return (
+    <svg
+      {...props}
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+      <polyline points="17 8 12 3 7 8" />
+      <line x1="12" x2="12" y1="3" y2="15" />
     </svg>
   );
 }

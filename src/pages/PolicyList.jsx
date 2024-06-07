@@ -107,7 +107,7 @@ function PolicyList() {
     return premium;
   };
   return (
-    <div className="max-w-6xl  my-12 px-4 md:px-0">
+    <div className="max-w-6xl  my-5 px-4 md:px-0">
       {selectedPolicy ? (
         <div className="grid md:grid-cols-2 gap-8">
           <div>
@@ -330,52 +330,52 @@ function PolicyList() {
           </div>
         </div>
       ) : (
-        <article>
-          <div>
-            <div className="flex items-center justify-between mb-10">
-              <Input
-                type="search"
-                placeholder="Search policies..."
-                value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
-                className="w-full max-w-md"
-              />
-            </div>
-            <div className="space-y-4">
-              {filteredPolicies.map((policy, index) => (
-                <Card key={index}>
-                  <CardHeader>
-                    <CardTitle>{policy.name}</CardTitle>
-                  </CardHeader>
-                  <CardContent className="flex justify-between items-center">
-                    <div>
-                      <Label htmlFor={`cover-amount-${index}`}>
-                        Cover Amount
-                      </Label>
-                      <Select id={`cover-amount-${index}`}>
-                        <SelectTrigger>
-                          <SelectValue>{policy.coverAmount}</SelectValue>
-                        </SelectTrigger>
-                        <SelectContent>
-                          <SelectItem value="50000">$50,000</SelectItem>
-                          <SelectItem value="100000">$100,000</SelectItem>
-                          <SelectItem value="250000">$250,000</SelectItem>
-                          <SelectItem value="500000">$500,000</SelectItem>
-                        </SelectContent>
-                      </Select>
-                    </div>
-                    <Button
-                      variant="outline"
-                      onClick={() => handleViewDetails(policy)}
-                    >
-                      View Details
-                    </Button>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
+        <div>
+          <h1 className="text-2xl font-bold mb-6">Products</h1>
+
+          <div className="flex items-center justify-between mb-10">
+            <Input
+              type="search"
+              placeholder="Search policies..."
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+              className="w-full max-w-md"
+            />
           </div>
-        </article>
+          <div className="space-y-4">
+            {filteredPolicies.map((policy, index) => (
+              <Card key={index}>
+                <CardHeader>
+                  <CardTitle>{policy.name}</CardTitle>
+                </CardHeader>
+                <CardContent className="flex justify-between items-center">
+                  <div>
+                    <Label htmlFor={`cover-amount-${index}`}>
+                      Cover Amount
+                    </Label>
+                    <Select id={`cover-amount-${index}`}>
+                      <SelectTrigger>
+                        <SelectValue>{policy.coverAmount}</SelectValue>
+                      </SelectTrigger>
+                      <SelectContent>
+                        <SelectItem value="50000">$50,000</SelectItem>
+                        <SelectItem value="100000">$100,000</SelectItem>
+                        <SelectItem value="250000">$250,000</SelectItem>
+                        <SelectItem value="500000">$500,000</SelectItem>
+                      </SelectContent>
+                    </Select>
+                  </div>
+                  <Button
+                    variant="outline"
+                    onClick={() => handleViewDetails(policy)}
+                  >
+                    View Details
+                  </Button>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
       )}
     </div>
   );

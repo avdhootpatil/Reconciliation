@@ -55,8 +55,7 @@ function PaymentHistory() {
             <TableHead>Date</TableHead>
             <TableHead>Amount Paid</TableHead>
             <TableHead>Transaction ID.</TableHead>
-            <TableHead>Balance Payable</TableHead>
-            <TableHead>Download Invoice</TableHead>
+            <TableHead>View Ack.</TableHead>
           </TableRow>
         </TableHeader>
         <TableBody>
@@ -66,7 +65,6 @@ function PaymentHistory() {
             <TableCell>16-02-2024</TableCell>
             <TableCell>10000</TableCell>
             <TableCell>Transaction ID 0</TableCell>
-            <TableCell>0</TableCell>
             <TableCell>
               <Button variant="ghost">
                 <DownloadIcon className="h-5 w-5" />
@@ -79,7 +77,6 @@ function PaymentHistory() {
             <TableCell>16-02-2024</TableCell>
             <TableCell>9000</TableCell>
             <TableCell>Transaction ID 1</TableCell>
-            <TableCell>1000</TableCell>
             <TableCell>
               <Button variant="ghost">
                 <DownloadIcon className="h-5 w-5" />
@@ -92,7 +89,6 @@ function PaymentHistory() {
             <TableCell>16-02-2024</TableCell>
             <TableCell>11000</TableCell>
             <TableCell>Transaction ID 2</TableCell>
-            <TableCell>-1000</TableCell>
             <TableCell>
               <Button variant="ghost">
                 <DownloadIcon className="h-5 w-5" />
@@ -105,7 +101,6 @@ function PaymentHistory() {
             <TableCell>16-02-2024</TableCell>
             <TableCell>15000</TableCell>
             <TableCell>Transaction ID 3</TableCell>
-            <TableCell>0</TableCell>
             <TableCell>
               <Button variant="ghost">
                 <DownloadIcon className="h-5 w-5" />
@@ -118,7 +113,6 @@ function PaymentHistory() {
             <TableCell>16-02-2024</TableCell>
             <TableCell>15000</TableCell>
             <TableCell>Transaction ID 4</TableCell>
-            <TableCell>0</TableCell>
             <TableCell>
               <Button variant="ghost">
                 <DownloadIcon className="h-5 w-5" />
