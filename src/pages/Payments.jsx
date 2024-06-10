@@ -13,31 +13,39 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { ShieldCheckIcon } from "lucide-react";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom/dist";
+import { useNavigate, useSearchParams } from "react-router-dom/dist";
 
 function Payments() {
   const navigate = useNavigate();
+  const queryParams = new URLSearchParams(window.location.search);
+  const path = queryParams.get("path");
+
   const [paymentMode, setPaymentMode] = useState("online");
-  const [activeTab, setActiveTab] = useState("cheque");
   const [chequeNumber, setChequeNumber] = useState("");
   const [chequeAmount, setChequeAmount] = useState("");
   const [bankName, setBankName] = useState("");
   const [associationName, setAssociationName] = useState("");
   const [favouredName, setFavouredName] = useState("");
   const [chequeFile, setChequeFile] = useState(null);
-  const [ddNumber, setDDNumber] = useState("");
-  const [ddPayableAt, setDDPayableAt] = useState("");
-  const [ddAmount, setDDAmount] = useState("");
-  const [ddFavouredName, setDDFavouredName] = useState("");
-  const [ddFile, setDDFile] = useState(null);
-  const policyDetails = {
-    policyName: "Health Insurance",
-    sumInsured: "₹5,00,000",
-    spouseChildren: "Spouse and 2 Children",
-    topUp: "₹1,00,000",
-    premium: "₹12,000 p.a.",
-  };
+
+  const [policies, setPolicies] = useState([
+    {
+      policyName: "Health Insurance",
+      sumInsured: "₹5,00,000",
+      spouseChildren: "Spouse and 2 Children",
+      topUp: "₹1,00,000",
+      premium: "₹12,000 p.a.",
+    },
+    {
+      policyName: "Life Insurance",
+      sumInsured: "₹10,00,000",
+      spouseChildren: "Spouse and 3 Children",
+      topUp: "₹2,00,000",
+      premium: "₹20,000 p.a.",
+    },
+  ]);
   const handlePaymentModeChange = (mode) => {
     setPaymentMode(mode);
   };
@@ -55,33 +63,128 @@ function Payments() {
   };
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-      <Card>
-        <CardHeader>
-          <CardTitle>Policy Details</CardTitle>
-        </CardHeader>
-        <CardContent className="grid gap-4">
-          <div className="grid gap-2">
-            <Label htmlFor="policyName">Policy Name</Label>
-            <div>{policyDetails.policyName}</div>
-          </div>
-          <div className="grid gap-2">
-            <Label htmlFor="sumInsured">Sum Insured</Label>
-            <div>{policyDetails.sumInsured}</div>
-          </div>
-          <div className="grid gap-2">
-            <Label htmlFor="spouseChildren">Spouse and Children</Label>
-            <div>{policyDetails.spouseChildren}</div>
-          </div>
-          <div className="grid gap-2">
-            <Label htmlFor="topUp">Top Up Amount</Label>
-            <div>{policyDetails.topUp}</div>
-          </div>
-          <div className="grid gap-2">
-            <Label htmlFor="premium">Premium</Label>
-            <div>{policyDetails.premium}</div>
-          </div>
-        </CardContent>
-      </Card>
+      <div className="grid gap-6">
+        {path === "cart" ? (
+          policies.map((policy, index) => (
+            <Card
+              key={index}
+              className="bg-gradient-to-br from-[#f3f4f6] to-[#e5e7eb] dark:from-gray-800 dark:to-gray-900 shadow-lg"
+            >
+              <CardHeader className="bg-white dark:bg-gray-800 rounded-t-lg p-6">
+                <div className="flex items-center justify-between">
+                  <CardTitle className="text-xl font-bold">
+                    {policy.policyName}
+                  </CardTitle>
+                </div>
+              </CardHeader>
+              <CardContent className="grid gap-4 p-6">
+                <div className="grid grid-cols-2 gap-4">
+                  <div className="grid gap-2">
+                    <Label
+                      htmlFor={`sumInsured-${index}`}
+                      className="text-sm font-medium text-gray-500 dark:text-gray-400"
+                    >
+                      Sum Insured
+                    </Label>
+                    <div className="text-lg font-bold">{policy.sumInsured}</div>
+                  </div>
+                  <div className="grid gap-2">
+                    <Label
+                      htmlFor={`spouseChildren-${index}`}
+                      className="text-sm font-medium text-gray-500 dark:text-gray-400"
+                    >
+                      Spouse and Children
+                    </Label>
+                    <div className="text-lg font-bold">
+                      {policy.spouseChildren}
+                    </div>
+                  </div>
+                </div>
+                <div className="grid grid-cols-2 gap-4">
+                  <div className="grid gap-2">
+                    <Label
+                      htmlFor={`topUp-${index}`}
+                      className="text-sm font-medium text-gray-500 dark:text-gray-400"
+                    >
+                      Top Up Amount
+                    </Label>
+                    <div className="text-lg font-bold">{policy.topUp}</div>
+                  </div>
+                  <div className="grid gap-2">
+                    <Label
+                      htmlFor={`premium-${index}`}
+                      className="text-sm font-medium text-gray-500 dark:text-gray-400"
+                    >
+                      Premium
+                    </Label>
+                    <div className="text-lg font-bold">{policy.premium}</div>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          ))
+        ) : (
+          <Card
+            key={policies[0]}
+            className="bg-gradient-to-br from-[#f3f4f6] to-[#e5e7eb] dark:from-gray-800 dark:to-gray-900 shadow-lg"
+          >
+            <CardHeader className="bg-white dark:bg-gray-800 rounded-t-lg p-6">
+              <div className="flex items-center justify-between">
+                <CardTitle className="text-xl font-bold">
+                  {policies[0].policyName}
+                </CardTitle>
+              </div>
+            </CardHeader>
+            <CardContent className="grid gap-4 p-6">
+              <div className="grid grid-cols-2 gap-4">
+                <div className="grid gap-2">
+                  <Label
+                    htmlFor={`sumInsured-${policies[0]}`}
+                    className="text-sm font-medium text-gray-500 dark:text-gray-400"
+                  >
+                    Sum Insured
+                  </Label>
+                  <div className="text-lg font-bold">
+                    {policies[0].sumInsured}
+                  </div>
+                </div>
+                <div className="grid gap-2">
+                  <Label
+                    htmlFor={`spouseChildren-${policies[0]}`}
+                    className="text-sm font-medium text-gray-500 dark:text-gray-400"
+                  >
+                    Spouse and Children
+                  </Label>
+                  <div className="text-lg font-bold">
+                    {policies[0].spouseChildren}
+                  </div>
+                </div>
+              </div>
+              <div className="grid grid-cols-2 gap-4">
+                <div className="grid gap-2">
+                  <Label
+                    htmlFor={`topUp-${policies[0]}`}
+                    className="text-sm font-medium text-gray-500 dark:text-gray-400"
+                  >
+                    Top Up Amount
+                  </Label>
+                  <div className="text-lg font-bold">{policies[0].topUp}</div>
+                </div>
+                <div className="grid gap-2">
+                  <Label
+                    htmlFor={`premium-${policies[0]}`}
+                    className="text-sm font-medium text-gray-500 dark:text-gray-400"
+                  >
+                    Premium
+                  </Label>
+                  <div className="text-lg font-bold">{policies[0].premium}</div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        )}
+      </div>
+
       <Card>
         <CardHeader className="flex flex-row justify-between items-center">
           <CardTitle>Payment Mode</CardTitle>

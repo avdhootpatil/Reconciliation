@@ -1,6 +1,7 @@
 import BankAssociation from "@/pages/BankAssociation";
 import CreateProduct from "@/pages/CreateProduct";
 import CreateProductList from "@/pages/CreateProductList";
+import Cart from "@/pages/Cart";
 import ImportData from "@/pages/ImportData";
 import Login from "@/pages/Login";
 import Messages from "@/pages/Messages";
@@ -92,6 +93,11 @@ const routes = [
     exact: true,
     path: "/productlist",
     component: <CreateProductList />,
+  },
+  {
+    exact: true,
+    path: "/cart",
+    component: <Cart />,
   },
 ];
 

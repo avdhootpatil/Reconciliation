@@ -317,10 +317,13 @@ function PolicyList() {
               </CardContent>
             </Card>
 
-            <div className="flex justify-end	">
+            <div className="flex justify-end items-center gap-3	">
+              <Button onClick={() => navigate("/cart")} className="mt-5">
+                Add to Cart
+              </Button>
               <Button
                 onClick={() => {
-                  navigate("/payment");
+                  navigate("/payment?path=product");
                 }}
                 className="mt-5"
               >
