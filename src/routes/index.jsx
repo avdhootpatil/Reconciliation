@@ -1,4 +1,6 @@
 import BankAssociation from "@/pages/BankAssociation";
+import CreateProduct from "@/pages/CreateProduct";
+import CreateProductList from "@/pages/CreateProductList";
 import ImportData from "@/pages/ImportData";
 import Login from "@/pages/Login";
 import Messages from "@/pages/Messages";
@@ -79,6 +81,17 @@ const routes = [
     exact: true,
     path: "/offlinepayments",
     component: <OfflinePayments />,
+  },
+  {
+    exact: true,
+    path: "/createproduct",
+    component: <CreateProduct />,
+  },
+
+  {
+    exact: true,
+    path: "/productlist",
+    component: <CreateProductList />,
   },
 ];
 

@@ -59,6 +59,15 @@ export default function AppLayout({ children }) {
               <div
                 className="flex items-center gap-3 rounded-lg  px-3 py-2 text-primary transition-all hover:text-primary cursor-pointer"
                 onClick={() => {
+                  navigate("/productlist");
+                }}
+              >
+                <Package className="h-4 w-4" />
+                Create Product
+              </div>
+              <div
+                className="flex items-center gap-3 rounded-lg  px-3 py-2 text-primary transition-all hover:text-primary cursor-pointer"
+                onClick={() => {
                   navigate("/retirees");
                 }}
               >
@@ -160,6 +169,15 @@ export default function AppLayout({ children }) {
                 >
                   <Package className="h-4 w-4" />
                   Bank Association
+                </div>
+                <div
+                  className="flex items-center gap-3 rounded-lg  px-3 py-2 text-primary transition-all hover:text-primary cursor-pointer"
+                  onClick={() => {
+                    navigate("/productlist");
+                  }}
+                >
+                  <Package className="h-4 w-4" />
+                  Create Product
                 </div>
                 <div
                   className="flex items-center gap-3 rounded-lg  px-3 py-2 text-primary transition-all hover:text-primary cursor-pointer"
