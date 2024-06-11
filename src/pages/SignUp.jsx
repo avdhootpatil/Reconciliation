@@ -110,7 +110,10 @@ const SignUp = () => {
             </Button>
           </div>
           <div className="mt-4 text-center text-sm">
-            Already have an account? <Link to="/login">Sign in</Link>
+            Already have an account?{" "}
+            <Link className="underline" to="/login">
+              Sign in
+            </Link>
           </div>
         </CardContent>
       </Card>
