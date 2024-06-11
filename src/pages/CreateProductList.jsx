@@ -92,18 +92,18 @@ function CreateProductList() {
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
         {filteredProducts.map((product) => (
           <Card key={product.id} className="h-full relative py-5">
-            <Button
-              variant="ghost"
-              size="icon"
-              className="absolute top-2 right-2 rounded-full border border-gray-200 w-8 h-8 dark:border-gray-800 mt-3"
-              onClick={() => handleViewClick(product)}
-            >
-              <EyeIcon className="w-4 h-4" />
-              <span className="sr-only">View {product.name}</span>
-            </Button>
             <CardContent className="flex flex-col justify-between h-full">
               <div>
-                <h3 className="text-lg font-semibold">{product.name}</h3>
+                <h3 className="text-lg font-semibold mr-3">{product.name}</h3>
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  className="absolute top-2 right-2 rounded-full border border-gray-200 w-8 h-8 dark:border-gray-800 mt-3"
+                  onClick={() => handleViewClick(product)}
+                >
+                  <EyeIcon className="w-4 h-4" />
+                  <span className="sr-only">View {product.name}</span>
+                </Button>
                 <p className="text-gray-500 dark:text-gray-400 mt-2">
                   {product.description}
                 </p>
@@ -112,6 +112,7 @@ function CreateProductList() {
                 onClick={() => {
                   navigate("/createproduct");
                 }}
+                className="mt-3"
               >
                 Edit
               </Button>
