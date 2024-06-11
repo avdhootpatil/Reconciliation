@@ -139,11 +139,11 @@ function CreateProductList() {
                 </TableHeader>
                 <TableBody>
                   <TableRow>
-                    <TableCell>$100,000</TableCell>
-                    <TableCell>$50,000</TableCell>
-                    <TableCell>$25,000</TableCell>
-                    <TableCell>$25,000</TableCell>
-                    <TableCell>$200,000</TableCell>
+                    <TableCell>100,000</TableCell>
+                    <TableCell>50,000</TableCell>
+                    <TableCell>25,000</TableCell>
+                    <TableCell>25,000</TableCell>
+                    <TableCell>200,000</TableCell>
                   </TableRow>
                 </TableBody>
               </Table>
