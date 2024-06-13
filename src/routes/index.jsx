@@ -1,10 +1,14 @@
 import BankAssociation from "@/pages/BankAssociation";
+import Broadcast from "@/pages/Broadcast";
+import BroadcastList from "@/pages/BroadcastList";
+import Cart from "@/pages/Cart";
+import CreateCampaign from "@/pages/CreateCampaign";
 import CreateProduct from "@/pages/CreateProduct";
 import CreateProductList from "@/pages/CreateProductList";
-import Cart from "@/pages/Cart";
+import CreateRetiree from "@/pages/CreateRetiree";
+import EnterDetails from "@/pages/EnterDetails";
 import ImportData from "@/pages/ImportData";
 import Login from "@/pages/Login";
-import Messages from "@/pages/Messages";
 import OfflinePayments from "@/pages/OfflinePayments";
 import PaymentHistory from "@/pages/PaymentHistory";
 import PaymentSuccess from "@/pages/PaymentSuccess";
@@ -14,9 +18,6 @@ import Profile from "@/pages/Profile";
 import Reports from "@/pages/Reports";
 import Retirees from "@/pages/Retirees";
 import SignUp from "@/pages/SignUp";
-import CreateCampaign from "@/pages/CreateCampaign";
-import EnterDetails from "@/pages/EnterDetails";
-import CreateRetiree from "@/pages/CreateRetiree";
 
 const routes = [
   {
@@ -73,8 +74,8 @@ const routes = [
 
   {
     exact: true,
-    path: "/messages",
-    component: <Messages />,
+    path: "/broadcastlist",
+    component: <BroadcastList />,
   },
   {
     exact: true,
@@ -117,6 +118,11 @@ const routes = [
     exact: true,
     path: "/createretiree",
     component: <CreateRetiree />,
+  },
+  {
+    exact: true,
+    path: "/broadcast",
+    component: <Broadcast />,
   },
 ];
 
