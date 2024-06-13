@@ -134,7 +134,7 @@ function PolicyList() {
           <div className="flex  justify-between">
             <div className="text-lg "> Total Premium: ₹20600</div>
             <Button className=" px-5" onClick={() => navigate("/enterdetails")}>
-              Go to payments
+              Enter Beneficiary Details
             </Button>
           </div>
         </div>

@@ -1,10 +1,3 @@
-/**
- * v0 by Vercel.
- * @see https://v0.dev/t/8CW4sVEFDkq
- * Documentation: https://v0.dev/docs#integrating-generated-code-into-your-nextjs-app
- */
-"use client";
-
 import { useState } from "react";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import {
@@ -214,19 +207,24 @@ function EnterDetails() {
                           }
                         />
                       </div>
-                      <Button
-                        className="mt-8  max-w-10 "
-                        onClick={() => handleAddNominee()}
-                      >
-                        <PlusIcon className="text-xl" />
-                      </Button>
+                      <div className="flex items-end space-y-2">
+                        <Button
+                          className="w-12"
+                          onClick={() => handleAddNominee()}
+                        >
+                          <PlusIcon className="text-xl" />
+                        </Button>
+                      </div>
                     </div>
                   </div>
                 ))}
               </CardContent>
             </Card>
             <div className="flex justify-end ">
-              <Button className="mt-3 " onClick={() => navigate("/payment")}>
+              <Button
+                className="mt-3 "
+                onClick={() => navigate("/payment?path=cart")}
+              >
                 Save and Pay
               </Button>
             </div>

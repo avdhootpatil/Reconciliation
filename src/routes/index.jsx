@@ -112,6 +112,12 @@ const routes = [
     path: "/enterdetails",
     component: <EnterDetails />,
   },
+
+  {
+    exact: true,
+    path: "/createretiree",
+    component: <CreateRetiree />,
+  },
 ];
 
 export default routes;

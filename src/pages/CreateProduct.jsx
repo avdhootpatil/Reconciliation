@@ -160,56 +160,59 @@ function CreateProduct() {
           </div>
         </div>
         <div>
-          <Label>Sum Insured Options</Label>
           <div className="space-y-4">
             {sumInsuredOptions.map((option, index) => (
-              <div key={index} className="flex items-center gap-4">
-                <Input
-                  type="number"
-                  placeholder="Enter sum insured"
-                  value={option.sumInsured}
-                  onChange={(e) =>
-                    handleSumInsuredChange(index, "sumInsured", e.target.value)
-                  }
-                />
-                <div className="flex items-center gap-4">
+              <div key={index} className="flex items-end gap-4">
+                <div>
+                  <Label>Sum Insured Options</Label>
                   <Input
                     type="number"
-                    placeholder="Self Only "
-                    value={option.selfOnly}
+                    value={option.sumInsured}
                     onChange={(e) =>
-                      handleSumInsuredChange(index, "selfOnly", e.target.value)
+                      handleSumInsuredChange(
+                        index,
+                        "sumInsured",
+                        e.target.value
+                      )
                     }
                   />
-                  {spouseCoverage && (
+                </div>
+                <div className="flex items-center gap-4">
+                  <div>
+                    <Label>Self Only Premium</Label>
                     <Input
                       type="number"
-                      placeholder="Spouse "
-                      value={option.spouse}
-                      onChange={(e) =>
-                        handleSumInsuredChange(index, "spouse", e.target.value)
-                      }
-                    />
-                  )}
-                  {handicappedChildren === 1 && (
-                    <Input
-                      type="number"
-                      placeholder="Child 1 "
-                      value={option.children1}
+                      value={option.selfOnly}
                       onChange={(e) =>
                         handleSumInsuredChange(
                           index,
-                          "children1",
+                          "selfOnly",
                           e.target.value
                         )
                       }
                     />
-                  )}
-                  {handicappedChildren === 2 && (
-                    <>
+                  </div>
+                  {spouseCoverage && (
+                    <div>
+                      <Label>Spouse Premium</Label>
                       <Input
                         type="number"
-                        placeholder="Child 2"
+                        value={option.spouse}
+                        onChange={(e) =>
+                          handleSumInsuredChange(
+                            index,
+                            "spouse",
+                            e.target.value
+                          )
+                        }
+                      />
+                    </div>
+                  )}
+                  {handicappedChildren === 1 && (
+                    <div>
+                      <Label>Child 1 Premium</Label>
+                      <Input
+                        type="number"
                         value={option.children1}
                         onChange={(e) =>
                           handleSumInsuredChange(
@@ -219,21 +222,40 @@ function CreateProduct() {
                           )
                         }
                       />
-                      <Input
-                        type="number"
-                        placeholder="Child 2 Premium"
-                        value={option.children2}
-                        onChange={(e) =>
-                          handleSumInsuredChange(
-                            index,
-                            "children2",
-                            e.target.value
-                          )
-                        }
-                      />
+                    </div>
+                  )}
+                  {handicappedChildren === 2 && (
+                    <>
+                      <div>
+                        <Label>Child 1 Premium</Label>
+                        <Input
+                          type="number"
+                          value={option.children1}
+                          onChange={(e) =>
+                            handleSumInsuredChange(
+                              index,
+                              "children1",
+                              e.target.value
+                            )
+                          }
+                        />
+                      </div>
+                      <div>
+                        <Label>Child 2 Premium</Label>
+                        <Input
+                          type="number"
+                          value={option.children2}
+                          onChange={(e) =>
+                            handleSumInsuredChange(
+                              index,
+                              "children2",
+                              e.target.value
+                            )
+                          }
+                        />
+                      </div>
                     </>
                   )}
-                  {/* <div className="font-medium">{option.total}</div> */}
                 </div>
                 <Button
                   variant="outline"
