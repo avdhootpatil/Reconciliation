@@ -194,7 +194,7 @@ function CreateProduct() {
                   {handicappedChildren === 1 && (
                     <Input
                       type="number"
-                      placeholder="Children 1 "
+                      placeholder="Child 1 "
                       value={option.children1}
                       onChange={(e) =>
                         handleSumInsuredChange(
@@ -209,7 +209,7 @@ function CreateProduct() {
                     <>
                       <Input
                         type="number"
-                        placeholder="Children 2"
+                        placeholder="Child 2"
                         value={option.children1}
                         onChange={(e) =>
                           handleSumInsuredChange(
@@ -221,7 +221,7 @@ function CreateProduct() {
                       />
                       <Input
                         type="number"
-                        placeholder="Children 2 Premium"
+                        placeholder="Child 2 Premium"
                         value={option.children2}
                         onChange={(e) =>
                           handleSumInsuredChange(
@@ -253,7 +253,7 @@ function CreateProduct() {
           </div>
         </div>
         <div className="flex justify-end">
-          <Button type="submit">Save Policy</Button>
+          <Button type="submit">Save Product</Button>
         </div>
       </form>
     </div>

@@ -14,6 +14,8 @@ import Profile from "@/pages/Profile";
 import Reports from "@/pages/Reports";
 import Retirees from "@/pages/Retirees";
 import SignUp from "@/pages/SignUp";
+import CreateCampaign from "@/pages/CreateCampaign";
+import EnterDetails from "@/pages/EnterDetails";
 
 const routes = [
   {
@@ -98,6 +100,16 @@ const routes = [
     exact: true,
     path: "/cart",
     component: <Cart />,
+  },
+  {
+    exact: true,
+    path: "/createcampaign",
+    component: <CreateCampaign />,
+  },
+  {
+    exact: true,
+    path: "/enterdetails",
+    component: <EnterDetails />,
   },
 ];
 
