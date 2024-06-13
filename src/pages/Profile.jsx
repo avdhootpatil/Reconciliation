@@ -27,18 +27,7 @@ function Profile() {
   const navigate = useNavigate();
 
   const [activeTab, setActiveTab] = useState("my-policies");
-  const [nominees, setNominees] = useState([
-    { name: "", dob: "", relation: "" },
-  ]);
 
-  const addNominee = () => {
-    setNominees([...nominees, { name: "", dob: "", relation: "" }]);
-  };
-  const handleNomineeChange = (index, field, value) => {
-    const updatedNominees = [...nominees];
-    updatedNominees[index][field] = value;
-    setNominees(updatedNominees);
-  };
   const policies = [
     {
       id: 1,
@@ -82,14 +71,12 @@ function Profile() {
       <div>
         <Tabs
           defaultValue="basic-details"
-          // className="w-full"
           value={activeTab}
           onValueChange={setActiveTab}
         >
           <TabsList className="mb-10">
             <TabsTrigger value="my-policies">My Policies</TabsTrigger>
             <TabsTrigger value="basic-details">Basic Details</TabsTrigger>
-            {/* <TabsTrigger value="nominee">Nominee</TabsTrigger> */}
           </TabsList>
           <TabsContent value="basic-details">
             <div className="space-y-4">
@@ -292,8 +279,14 @@ function Profile() {
                       <TableCell>{policy.paymentStatus}</TableCell>
                       <TableCell>${policy.premium.toFixed(2)}</TableCell>
                       <TableCell>
-                        <Button variant="outline" size="sm">
-                          Renew
+                        <Button
+                          variant="outline"
+                          size="sm"
+                          onClick={() => {
+                            navigate("/payment");
+                          }}
+                        >
+                          Pay
                         </Button>
                       </TableCell>
                     </TableRow>

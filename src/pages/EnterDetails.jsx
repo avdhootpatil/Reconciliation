@@ -12,6 +12,13 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import WithLayout from "@/components/layout/WithLayout";
 import { useNavigate } from "react-router-dom";
+import { Select } from "@radix-ui/react-select";
+import {
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 
 function EnterDetails() {
   const navigate = useNavigate();
@@ -144,11 +151,18 @@ function EnterDetails() {
           </TabsContent>
           <TabsContent value="nominees">
             <Card>
-              <CardHeader>
-                <CardTitle>Nominee Details</CardTitle>
-                <CardDescription>
-                  Add multiple nominees and their details.
-                </CardDescription>
+              <CardHeader className="flex flex-row justify-between">
+                <div>
+                  <CardTitle>Nominee Details</CardTitle>
+                  <CardDescription>
+                    Add multiple nominees and their details.
+                  </CardDescription>
+                </div>
+                <div className="flex items-end space-y-2">
+                  <Button onClick={() => handleAddNominee()}>
+                    Add Nominee
+                  </Button>
+                </div>
               </CardHeader>
               <CardContent className="space-y-6">
                 {nominees.map((nominee, index) => (
@@ -207,13 +221,18 @@ function EnterDetails() {
                           }
                         />
                       </div>
-                      <div className="flex items-end space-y-2">
-                        <Button
-                          className="w-12"
-                          onClick={() => handleAddNominee()}
-                        >
-                          <PlusIcon className="text-xl" />
-                        </Button>
+                      <div className="space-y-2">
+                        <Label htmlFor="child1-policy">Policy</Label>
+                        <Select>
+                          <SelectTrigger id="child1-policy" aria-label="Policy">
+                            <SelectValue placeholder="Select Policy" />
+                          </SelectTrigger>
+                          <SelectContent>
+                            <SelectItem value="policy1">Policy 1</SelectItem>
+                            <SelectItem value="policy2">Policy 2</SelectItem>
+                            <SelectItem value="policy3">Policy 3</SelectItem>
+                          </SelectContent>
+                        </Select>
                       </div>
                     </div>
                   </div>

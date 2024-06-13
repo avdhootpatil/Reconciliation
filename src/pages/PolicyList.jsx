@@ -15,7 +15,7 @@ function PolicyList() {
   const navigate = useNavigate();
   return (
     <div>
-      <h1 className="text-2xl font-bold mb-6">Products</h1>
+      <h1 className="text-2xl font-bold mb-6"> Policy Options</h1>
       <section className=" ">
         <div className=" mx-auto grid gap-6">
           <Card className="w-full">

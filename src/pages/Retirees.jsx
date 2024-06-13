@@ -65,14 +65,11 @@ function Retirees() {
                   <TableHead>Is Policy Active</TableHead>
                   <TableHead>Association Name</TableHead>
                   <TableHead className="w-[150px]">Actions</TableHead>
+                  <TableHead className="w-[150px]">Profile</TableHead>
                 </TableRow>
               </TableHeader>
               <TableBody>
-                <TableRow
-                  onClick={() => {
-                    navigate("/");
-                  }}
-                >
+                <TableRow>
                   <TableCell>John Doe</TableCell>
                   <TableCell>Retirement Plan A</TableCell>
                   <TableCell>$500,000</TableCell>
@@ -110,6 +107,15 @@ function Retirees() {
                         </DialogFooter>
                       </DialogContent>
                     </Dialog>
+                  </TableCell>
+                  <TableCell>
+                    <Button
+                      onClick={() => {
+                        navigate("/");
+                      }}
+                    >
+                      View Profile
+                    </Button>
                   </TableCell>
                 </TableRow>
                 <TableRow>
@@ -150,6 +156,15 @@ function Retirees() {
                         </DialogFooter>
                       </DialogContent>
                     </Dialog>
+                  </TableCell>
+                  <TableCell>
+                    <Button
+                      onClick={() => {
+                        navigate("/");
+                      }}
+                    >
+                      View Profile
+                    </Button>
                   </TableCell>
                 </TableRow>
                 <TableRow>
@@ -192,6 +207,15 @@ function Retirees() {
                         </DialogFooter>
                       </DialogContent>
                     </Dialog>
+                  </TableCell>
+                  <TableCell>
+                    <Button
+                      onClick={() => {
+                        navigate("/");
+                      }}
+                    >
+                      View Profile
+                    </Button>
                   </TableCell>
                 </TableRow>
               </TableBody>
