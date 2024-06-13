@@ -16,6 +16,7 @@ import Retirees from "@/pages/Retirees";
 import SignUp from "@/pages/SignUp";
 import CreateCampaign from "@/pages/CreateCampaign";
 import EnterDetails from "@/pages/EnterDetails";
+import CreateRetiree from "@/pages/CreateRetiree";
 
 const routes = [
   {

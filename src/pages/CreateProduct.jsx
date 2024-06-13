@@ -84,7 +84,7 @@ function CreateProduct() {
   };
   return (
     <div className="container ">
-      <h1 className="mb-8 text-3xl font-bold">Create Policy</h1>
+      <h1 className="mb-8 text-3xl font-bold">Create Product</h1>
       <form className="space-y-6">
         <div className="grid grid-cols-2 gap-6">
           <div>

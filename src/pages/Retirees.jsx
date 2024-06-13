@@ -35,10 +35,24 @@ function Retirees() {
     <div>
       <Card>
         <CardHeader>
-          <CardTitle>Retiree Data</CardTitle>
-          <CardDescription>
-            View and manage retiree policy information.
-          </CardDescription>
+          <div className="flex justify-between">
+            <div>
+              <CardTitle>Retiree Data</CardTitle>
+              <CardDescription>
+                View and manage retiree policy information.
+              </CardDescription>
+            </div>
+            <div>
+              <Button
+                onClick={() => {
+                  navigate("/createretiree");
+                }}
+              >
+                {" "}
+                Create Retiree
+              </Button>
+            </div>
+          </div>
         </CardHeader>
         <CardContent>
           <div className="relative w-full overflow-auto">
