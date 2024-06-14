@@ -18,6 +18,10 @@ import Profile from "@/pages/Profile";
 import Reports from "@/pages/Reports";
 import Retirees from "@/pages/Retirees";
 import SignUp from "@/pages/SignUp";
+import Campaigns from "@/pages/Campaigns";
+import EnterDetails from "@/pages/EnterDetails";
+import CreateRetiree from "@/pages/CreateRetiree";
+import CreateCampaign from "@/pages/CreateCampaign";
 
 const routes = [
   {
@@ -105,8 +109,8 @@ const routes = [
   },
   {
     exact: true,
-    path: "/createcampaign",
-    component: <CreateCampaign />,
+    path: "/campaigns",
+    component: <Campaigns />,
   },
   {
     exact: true,
@@ -118,6 +122,11 @@ const routes = [
     exact: true,
     path: "/createretiree",
     component: <CreateRetiree />,
+  },
+  {
+    exact: true,
+    path: "/createcampaign",
+    component: <CreateCampaign />,
   },
   {
     exact: true,
