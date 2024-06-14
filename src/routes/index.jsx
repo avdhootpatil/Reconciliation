@@ -6,7 +6,6 @@ import CreateCampaign from "@/pages/CreateCampaign";
 import CreateProduct from "@/pages/CreateProduct";
 import CreateProductList from "@/pages/CreateProductList";
 import CreateRetiree from "@/pages/CreateRetiree";
-import EnterDetails from "@/pages/EnterDetails";
 import ImportData from "@/pages/ImportData";
 import Login from "@/pages/Login";
 import OfflinePayments from "@/pages/OfflinePayments";
@@ -20,8 +19,6 @@ import Retirees from "@/pages/Retirees";
 import SignUp from "@/pages/SignUp";
 import Campaigns from "@/pages/Campaigns";
 import EnterDetails from "@/pages/EnterDetails";
-import CreateRetiree from "@/pages/CreateRetiree";
-import CreateCampaign from "@/pages/CreateCampaign";
 
 const routes = [
   {
